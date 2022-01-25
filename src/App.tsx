@@ -1,25 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect} from 'react'
+import './App.css'
+import Auth from './components/Auth/Auth'
+import "bootstrap/dist/css/bootstrap.css"
+import Dashboard from './components/Dashboard/Dashboard'
 
-function App() {
+const App: React.FunctionComponent = (): JSX.Element => {
+  const [sessionToken, setSessionToken] = useState<string | null>('');
+
+  useEffect(() => {
+    if (localStorage.getItem('token')) {
+      setSessionToken(localStorage.getItem('token'))
+    }
+  }, [])
+
+  const updateToken = (newToken: string) => {
+    localStorage.setItem('token', newToken);
+    setSessionToken(newToken);
+    console.log(sessionToken)
+  }
+
+  const clearToken = () => {
+    localStorage.clear();
+    setSessionToken('');
+  }
+
+
+  const loggedInView = () => {
+    if (sessionToken === localStorage.getItem('token')) {
+      return <Dashboard sessionToken={sessionToken} clearToken={clearToken} />
+    } else {
+      return <Auth updateToken={updateToken}/>
+    }
+  }
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {loggedInView()}
+    </>
   );
 }
 

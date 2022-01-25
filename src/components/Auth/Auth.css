@@ -1,0 +1,20 @@
+h1 {
+    font-size: 5rem !important;
+    text-align: center;
+    padding-bottom: 3rem;
+    color: #ffc107;
+}
+
+h3 {
+    color: #ffc107;
+    padding-bottom: 1rem;
+}
+
+.auth-container-fluid p-5 my-5 bg-dark text-white container {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
