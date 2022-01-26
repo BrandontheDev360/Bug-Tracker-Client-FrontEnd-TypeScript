@@ -1,6 +1,6 @@
 import React from "react";
 import { Card,  CardText, CardBody,
-    CardTitle, CardSubtitle, Button } from 'reactstrap';
+    CardTitle, CardSubtitle, Button} from 'reactstrap';
 import ReplyIndex from "../Replies/ReplyIndex";
 
 interface BugDisplayProps {
@@ -49,9 +49,9 @@ class BugDisplay extends React.Component<BugDisplayProps, BugDisplayState> {
     bugMapper = () => {
         return this.props.bugs.map((bug: any, index: any) => {
             return(
-                <>
+                <div className="container">
                 <Card key={index}>
-                    <CardBody>
+                    <CardBody className="cardbody">
                         <h2>Bug Ticket</h2>
                         <CardTitle>Title: {bug.title}</CardTitle>
                         <CardSubtitle>Priority: {bug.priority}</CardSubtitle>
@@ -63,7 +63,7 @@ class BugDisplay extends React.Component<BugDisplayProps, BugDisplayState> {
                     </CardBody>
                 </Card>
                 <br />
-                </>
+                </div>
             )
         })
     }
