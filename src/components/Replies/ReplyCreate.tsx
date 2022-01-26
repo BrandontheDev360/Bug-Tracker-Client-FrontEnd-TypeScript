@@ -49,7 +49,6 @@ class ReplyCreate extends React.Component<ReplyCreateProps, ReplyCreateState> {
     render() {
         return(
             <>
-            {/* <h1>Create A Reply</h1> */}
                 <Form onSubmit={this.handleReplyCreate}>
                     <FormGroup>
                         <Label></Label>
