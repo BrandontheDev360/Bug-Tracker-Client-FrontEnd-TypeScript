@@ -38,9 +38,9 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
                         <NavItem>
                             <NavLink href="#allbugs">All Bugs</NavLink>
                         </NavItem>
-                        <NavItem>
+                        {/* <NavItem>
                             <NavLink href="#replyindex">Reply</NavLink>
-                        </NavItem>
+                        </NavItem> */}
                         <NavItem>
                         <Button className="logout-btn" onClick={this.props.clearToken} outline color="danger">Logout</Button>
                         </NavItem>
