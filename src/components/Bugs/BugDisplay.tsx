@@ -59,6 +59,7 @@ class BugDisplay extends React.Component<BugDisplayProps, BugDisplayState> {
                         <CardText>Bug Id: {bug.id}</CardText>
                         <Button outline color = 'primary' onClick = {() => {this.props.editUpdateBug(bug); this.props.updateOn()}}>Update Bug Ticket</Button>
                         <Button className="delete-btn" outline color = 'danger' onClick={() => {this.deleteBug(bug)}}>Delete</Button>
+                        <ReplyIndex sessionToken={this.props.sessionToken}/>
                     </CardBody>
                 </Card>
                 <br />

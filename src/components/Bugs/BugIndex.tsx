@@ -86,9 +86,9 @@ class BugIndex extends React.Component<BugIndexProps, BugIndexState> {
                         <BugDisplay fetchBugs={this.fetchBugs} sessionToken={this.props.sessionToken} bugs={this.state.bugs} editUpdateBug={this.editUpdateBug} updateOn={this.updateOn} />
                         <Button outline color = 'warning' onClick={this.fetchBugs}>Load Bugs</Button>
                     </Col>
-                    <Col id="replyindex">
+                    {/* <Col id="replyindex">
                         <ReplyIndex sessionToken={this.props.sessionToken}/>
-                    </Col>
+                    </Col> */}
                     {this.state.updateToggle ? <BugEdit bugUpdate = {this.state.bugUpdate} updateOff = {this.updateOff} 
                 sessionToken = {this.props.sessionToken} fetchBugs = {this.fetchBugs} /> 
                 : <></>}
