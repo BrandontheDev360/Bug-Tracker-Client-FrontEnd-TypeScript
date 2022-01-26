@@ -49,12 +49,12 @@ class ReplyCreate extends React.Component<ReplyCreateProps, ReplyCreateState> {
     render() {
         return(
             <>
-            <h1>Create A Reply</h1>
+            {/* <h1>Create A Reply</h1> */}
                 <Form onSubmit={this.handleReplyCreate}>
                     <FormGroup>
                         <Label></Label>
                         <p>Reply:</p>
-                        <Input name = 'title' value = {this.state.reply} onChange={(e) => this.setState({reply: e.target.value})} placeholder = 'Reply' required></Input>
+                        <Input name = 'Reply' value = {this.state.reply} onChange={(e) => this.setState({reply: e.target.value})} placeholder = 'Reply' required></Input>
                     </FormGroup>
 
                     <FormGroup>

@@ -39,7 +39,7 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
                             <NavLink href="#allbugs">All Bugs</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink to="/">Reply</NavLink>
+                            <NavLink href="#replyindex">Reply</NavLink>
                         </NavItem>
                         <NavItem>
                         <Button className="logout-btn" onClick={this.props.clearToken} outline color="danger">Logout</Button>
