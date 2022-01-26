@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Col, Row } from "reactstrap";
 import ReplyCreate from "./ReplyCreate";
 import ReplyDisplay from "./ReplyDisplay";
+import ReplyEdit from "./ReplyEdit";
 
 interface ReplyIndexProps {
     sessionToken: any
@@ -79,6 +80,9 @@ class ReplyIndex extends React.Component<ReplyIndexProps, ReplyIndexState> {
                     <Col>
                         <ReplyDisplay fetchReplies={this.fetchReplies} sessionToken={this.props.sessionToken}  editUpdateReply={this.editUpdateReply} updateOn={this.updateOn} replies={this.state.replies}/>
                     </Col>
+                    {this.state.updateToggle ? <ReplyEdit replyUpdate = {this.state.replyUpdate} updateOff = {this.updateOff} 
+                sessionToken = {this.props.sessionToken} fetchReplies = {this.fetchReplies} /> 
+                : <></>}
                 </Row>
             </div>
             </>
