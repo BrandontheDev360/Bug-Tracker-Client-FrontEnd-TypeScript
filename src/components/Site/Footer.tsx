@@ -11,7 +11,7 @@ class Footer extends React.Component {
                 <br />
                 <br />
                 <Row>
-                    <p>Created By Brandon Nguyen</p>
+                    <p>By Brandon Nguyen</p>
                 </Row>
             </footer>
             </div>
