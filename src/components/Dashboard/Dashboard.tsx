@@ -22,7 +22,6 @@ class Dashboard extends React.Component<DashboardProps> {
                 </Router>
                 <div className='container'>
                     <BugIndex sessionToken={this.props.sessionToken} />
-                    {/* <ReplyIndex sessionToken={this.props.sessionToken}/> */}
                 </div>
                 <br />
                 <br />
