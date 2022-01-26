@@ -1,6 +1,7 @@
 import React from "react";
 import { Card,  CardText, CardBody,
     CardTitle, CardSubtitle, Button } from 'reactstrap';
+import ReplyIndex from "../Replies/ReplyIndex";
 
 interface BugDisplayProps {
     sessionToken: any
@@ -21,6 +22,7 @@ class BugDisplay extends React.Component<BugDisplayProps, BugDisplayState> {
             user: []
         }
     }
+
     deleteBug = (bug: any) => {
         fetch(`http://localhost:3009/bug/${bug.id}`, {
             method: "DELETE",
@@ -54,7 +56,7 @@ class BugDisplay extends React.Component<BugDisplayProps, BugDisplayState> {
                         <CardTitle>Title: {bug.title}</CardTitle>
                         <CardSubtitle>Priority: {bug.priority}</CardSubtitle>
                         <CardText>Description: {bug.description}</CardText>
-                        <CardText>Bug Created: {bug.createdAt}</CardText>
+                        <CardText>Bug Id: {bug.id}</CardText>
                         <Button outline color = 'primary' onClick = {() => {this.props.editUpdateBug(bug); this.props.updateOn()}}>Update Bug Ticket</Button>
                         <Button className="delete-btn" outline color = 'danger' onClick={() => {this.deleteBug(bug)}}>Delete</Button>
                     </CardBody>

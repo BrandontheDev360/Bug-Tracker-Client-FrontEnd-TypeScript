@@ -2,6 +2,7 @@ import React from "react";
 import { Button, Navbar, Nav, NavItem, NavLink, NavbarBrand, NavbarToggler, Collapse } from "reactstrap";
 import '../Site/Navigation.css'
 
+
 interface NavigationProps {
     clearToken: any
 }
@@ -35,13 +36,13 @@ class Navigation extends React.Component<NavigationProps, NavigationState> {
                     <Collapse isOpen={this.state.isOpen} navbar>
                     <Nav className="ml-auto" navbar>
                         <NavItem>
-                            <NavLink href="#">PlaceHolder</NavLink>
+                            <NavLink href="#allbugs">All Bugs</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="#">PlaceHolder</NavLink>
+                            <NavLink to="/">Reply</NavLink>
                         </NavItem>
                         <NavItem>
-                            <NavLink href="#">PlaceHolder</NavLink>
+                        <Button className="logout-btn" onClick={this.props.clearToken} outline color="danger">Logout</Button>
                         </NavItem>
                     </Nav>
                     </Collapse>

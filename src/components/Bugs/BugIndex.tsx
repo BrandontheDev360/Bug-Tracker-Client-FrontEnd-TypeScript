@@ -1,5 +1,7 @@
 import React, {useEffect} from "react";
 import { Button, Col, Row } from "reactstrap";
+import ReplyCreate from "../Replies/ReplyCreate";
+import ReplyIndex from "../Replies/ReplyIndex";
 import BugCreate from "./BugCreate";
 import BugDisplay from "./BugDisplay";
 import BugEdit from "./BugEdit";
@@ -70,24 +72,26 @@ class BugIndex extends React.Component<BugIndexProps, BugIndexState> {
     render() {
         return(
             <>
-            <div className="container">
+            <div className="bugcreate-container">
                 <Row>
                     <Col>
                         <BugCreate fetchBugs={this.fetchBugs} sessionToken={this.props.sessionToken}/>
                     </Col>
                 </Row>
-
+                
+                <section id="allbugs">
                 <h1>All Bugs</h1>
                 <Row>
                     <Col>
-                        <BugDisplay fetchBugs={this.fetchBugs} sessionToken={this.props.sessionToken} bugs={this.state.bugs} editUpdateBug={this.editUpdateBug} updateOn={this.updateOn}/>
-                        <br />
+                        <BugDisplay fetchBugs={this.fetchBugs} sessionToken={this.props.sessionToken} bugs={this.state.bugs} editUpdateBug={this.editUpdateBug} updateOn={this.updateOn} />
                         <Button outline color = 'warning' onClick={this.fetchBugs}>Load Bugs</Button>
+                        <ReplyIndex sessionToken={this.props.sessionToken}/>
                     </Col>
                     {this.state.updateToggle ? <BugEdit bugUpdate = {this.state.bugUpdate} updateOff = {this.updateOff} 
                 sessionToken = {this.props.sessionToken} fetchBugs = {this.fetchBugs} /> 
                 : <></>}
                 </Row>
+                </section>
             </div>
             </>
         )

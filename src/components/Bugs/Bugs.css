@@ -13,3 +13,19 @@
 .modal-header {
     color: #ffc107
 }
+
+#allbugs {
+    margin-top: 15rem;
+}
+
+.bugcreate-container {
+    margin-top: 7rem;
+}
+
+.modal-content {
+    border: solid #ffc107
+}
+
+.exit {
+    margin-left: 18rem;
+}

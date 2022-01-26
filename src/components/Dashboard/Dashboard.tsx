@@ -6,6 +6,7 @@ import {
 } from 'react-router-dom';
 import Navigation from '../Site/Navigation'
 import BugIndex from '../Bugs/BugIndex';
+import ReplyIndex from '../Replies/ReplyIndex';
 
 
 interface DashboardProps {
@@ -17,14 +18,17 @@ class Dashboard extends React.Component<DashboardProps> {
     render() {
         return (
             <>
-                <Navigation clearToken={this.props.clearToken}/>
+                <Router>
+                <Navigation clearToken={this.props.clearToken}  />
+                </Router>
                 <div className='container'>
                     <BugIndex sessionToken={this.props.sessionToken} />
+                    {/* <ReplyIndex sessionToken={this.props.sessionToken}/> */}
                 </div>
                 <br />
                 <br />
                 <div className='container'>
-                    <Button onClick={this.props.clearToken} outline color="warning">Logout</Button>
+                    <Button onClick={this.props.clearToken} outline color="danger">Logout</Button>
                 </div>
                 <Footer />
             </>
